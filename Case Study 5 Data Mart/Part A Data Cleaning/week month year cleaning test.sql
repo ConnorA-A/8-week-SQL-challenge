@@ -1,6 +1,5 @@
--- Date month year testing
+-- week month year testing
 
--- convert the week_date to a DATE format
 
 SELECT 
     week_date,
