@@ -10,3 +10,4 @@ GROUP BY age_band, demographic
 ORDER BY SUM(CAST(sales AS BIGINT)) DESC
 
 -- data mart can't determine the largest contributor of sales as unknown demographic and unknown age_band hold the highest sales amount
+
