@@ -1,6 +1,6 @@
--- Pizza Runner schema - T-SQL version for SQL Server
--- Run against the pizza_runner database
-
+IF DB_ID('pizza_runner') IS NULL
+    CREATE DATABASE pizza_runner;
+GO
 USE pizza_runner;
 GO
 
@@ -17,7 +17,6 @@ VALUES
   (3, '2021-01-08'),
   (4, '2021-01-15');
 
-
 DROP TABLE IF EXISTS customer_orders;
 CREATE TABLE customer_orders (
   "order_id" INTEGER,
@@ -27,7 +26,6 @@ CREATE TABLE customer_orders (
   "extras" VARCHAR(4),
   "order_time" DATETIME
 );
-
 INSERT INTO customer_orders
   ("order_id", "customer_id", "pizza_id", "exclusions", "extras", "order_time")
 VALUES
@@ -46,7 +44,6 @@ VALUES
   ('10', '104', '1', 'null', 'null', '2020-01-11 18:34:49'),
   ('10', '104', '1', '2, 6', '1, 4', '2020-01-11 18:34:49');
 
-
 DROP TABLE IF EXISTS runner_orders;
 CREATE TABLE runner_orders (
   "order_id" INTEGER,
@@ -56,7 +53,6 @@ CREATE TABLE runner_orders (
   "duration" VARCHAR(10),
   "cancellation" VARCHAR(23)
 );
-
 INSERT INTO runner_orders
   ("order_id", "runner_id", "pickup_time", "distance", "duration", "cancellation")
 VALUES
@@ -71,7 +67,6 @@ VALUES
   ('9', '2', 'null', 'null', 'null', 'Customer Cancellation'),
   ('10', '1', '2020-01-11 18:50:20', '10km', '10minutes', 'null');
 
-
 DROP TABLE IF EXISTS pizza_names;
 CREATE TABLE pizza_names (
   "pizza_id" INTEGER,
@@ -83,7 +78,6 @@ VALUES
   (1, 'Meatlovers'),
   (2, 'Vegetarian');
 
-
 DROP TABLE IF EXISTS pizza_recipes;
 CREATE TABLE pizza_recipes (
   "pizza_id" INTEGER,
@@ -94,7 +88,6 @@ INSERT INTO pizza_recipes
 VALUES
   (1, '1, 2, 3, 4, 5, 6, 8, 10'),
   (2, '4, 6, 7, 9, 11, 12');
-
 
 DROP TABLE IF EXISTS pizza_toppings;
 CREATE TABLE pizza_toppings (
