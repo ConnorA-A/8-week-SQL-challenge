@@ -1,4 +1,4 @@
--- How many days on average does it take for a customer to an annual plan from the day they join Foodie-Fi?
+-- How many days on average does it take for a customer to upgrade to an annual plan from the day they join Foodie-Fi?
 
 WITH trial_collected AS(
 SELECT *

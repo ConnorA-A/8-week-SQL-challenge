@@ -1,4 +1,4 @@
--- How many customer upgraded to the annual plan in 2020?
+-- How many customers upgraded to the annual plan in 2020?
 
 SELECT 
     COUNT(subscriptions.plan_id) AS annual_plans
